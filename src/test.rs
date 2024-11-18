@@ -147,3 +147,19 @@ mod cp6_782 {
         test_rerandomize::<CP6_782>();
     }
 }
+
+mod bn254 {
+    use super::{test_prove_and_verify, test_rerandomize};
+
+    use ark_bn254::Bn254;
+
+    #[test]
+    fn prove_and_verify() {
+        test_prove_and_verify::<Bn254>(1);
+    }
+
+    #[test]
+    fn rerandomize() {
+        test_rerandomize::<Bn254>();
+    }
+}
