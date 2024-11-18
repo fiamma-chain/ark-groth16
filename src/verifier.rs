@@ -47,6 +47,7 @@ impl<E: Pairing, QAP: R1CSToQAP> Groth16<E, QAP> {
         proof: &Proof<E>,
         prepared_inputs: &E::G1,
     ) -> R1CSResult<bool> {
+        // let qap = E::multi_miller_loop_affine(
         let qap = E::multi_miller_loop(
             [
                 <E::G1Affine as Into<E::G1Prepared>>::into(proof.a),
