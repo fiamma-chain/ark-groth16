@@ -77,3 +77,9 @@ lto = "thin"
 incremental = true
 debug-assertions = true
 debug = true
+
+[patch.crates-io]
+ark-ff = { path = "../fiamma-algebra/ff" }
+ark-ec = { path = "../fiamma-algebra/ec" }
+ark-serialize = { path = "../fiamma-algebra/serialize" }
+ark-poly = { path = "../fiamma-algebra/poly" }
