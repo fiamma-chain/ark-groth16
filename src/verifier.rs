@@ -13,7 +13,7 @@ use core::ops::{AddAssign, Neg};
 pub fn prepare_verifying_key<E: Pairing>(vk: &VerifyingKey<E>) -> PreparedVerifyingKey<E> {
     PreparedVerifyingKey {
         vk: vk.clone(),
-        alpha_g1_beta_g2: E::pairing(vk.alpha_g1, vk.beta_g2).0,
+        alpha_g1_beta_g2: E::pairing_affine(vk.alpha_g1, vk.beta_g2).0,
         gamma_g2_neg_pc: vk.gamma_g2.into_group().neg().into_affine().into(),
         delta_g2_neg_pc: vk.delta_g2.into_group().neg().into_affine().into(),
     }
